@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SwiperModule } from 'swiper/angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,9 @@ import { HomeComponent } from './website/pages/home/home.component';
 import { MyOderComponent } from './website/pages/my-oder/my-oder.component';
 
 import { MaterialModule } from './material/material.module';
+import { BannerComponent } from './shared/components/banner/banner.component';
+import { ProductComponent } from './shared/components/product/product.component';
+import { ProductsComponent } from './shared/components/products/products.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +27,11 @@ import { MaterialModule } from './material/material.module';
     RegisterComponent,
     HomeComponent,
     MyOderComponent,
+    BannerComponent,
+    ProductComponent,
+    ProductsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule],
+  imports: [BrowserModule, AppRoutingModule, MaterialModule, SwiperModule],
   providers: [],
   bootstrap: [AppComponent],
 })

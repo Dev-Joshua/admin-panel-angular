@@ -1,0 +1,9 @@
+<div class="banner">
+  <swiper class="swiper-container" [slidesPerView]="1">
+    <ng-template swiperSlide *ngFor="let img of images">
+      <div class="banner--slider">
+        <img [src]="img" alt="imagen del banner" />
+      </div>
+    </ng-template>
+  </swiper>
+</div>
