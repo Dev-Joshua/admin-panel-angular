@@ -9,8 +9,9 @@ import { FooterComponent } from './website/components/footer/footer.component';
 import { LoginComponent } from './website/pages/login/login.component';
 import { RegisterComponent } from './website/pages/register/register.component';
 import { HomeComponent } from './website/pages/home/home.component';
-import { MyCartComponent } from './website/pages/my-cart/my-cart.component';
 import { MyOderComponent } from './website/pages/my-oder/my-oder.component';
+
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -21,14 +22,10 @@ import { MyOderComponent } from './website/pages/my-oder/my-oder.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    MyCartComponent,
-    MyOderComponent
+    MyOderComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, MaterialModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
