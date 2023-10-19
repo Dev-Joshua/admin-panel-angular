@@ -4,6 +4,7 @@ import { HomeComponent } from './website/pages/home/home.component';
 import { RegisterComponent } from './website/pages/register/register.component';
 import { MyOderComponent } from './website/pages/my-oder/my-oder.component';
 import { LoginComponent } from './website/pages/login/login.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
   },
 ];
 

@@ -17,6 +17,7 @@ import { MaterialModule } from './material/material.module';
 import { BannerComponent } from './shared/components/banner/banner.component';
 import { ProductComponent } from './shared/components/product/product.component';
 import { ProductsComponent } from './shared/components/products/products.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ProductsComponent } from './shared/components/products/products.compone
     BannerComponent,
     ProductComponent,
     ProductsComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
