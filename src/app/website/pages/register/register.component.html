@@ -1,1 +1,55 @@
-<p>register works!</p>
+<form>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Registro</mat-card-title>
+      <hr />
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input placeholder="you@mail.com" matInput type="email" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Password</mat-label>
+            <input placeholder="******" matInput type="password" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Confirm password</mat-label>
+            <input placeholder="******" matInput type="password" />
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <mat-label>Company name</mat-label>
+            <input placeholder="TCL" matInput type="text" />
+          </mat-form-field>
+        </div>
+      </div>
+      <!-- <mat-checkbox>Hide required marker</mat-checkbox> -->
+      <div>
+        <mat-radio-group>
+          <mat-radio-button value="auto">User</mat-radio-button>
+          <mat-radio-button value="always">Company</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button type="submit">Registrarse</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

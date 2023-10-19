@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SwiperModule } from 'swiper/angular';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +32,13 @@ import { ProductsComponent } from './shared/components/products/products.compone
     ProductComponent,
     ProductsComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MaterialModule, SwiperModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MaterialModule,
+    SwiperModule,
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
