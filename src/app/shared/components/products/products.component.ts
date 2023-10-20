@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 
 import { Product } from 'src/app/models/product.model';
 import { ProductsService } from 'src/app/services/products.service';
+import { StoreService } from 'src/app/services/store.service';
 
 @Component({
   selector: 'app-products',
@@ -9,7 +10,18 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./products.component.scss'],
 })
 export class ProductsComponent {
-  constructor(private productsService: ProductsService) {}
+  products: Product[] = [];
+  shoppingCart: Product[] = [];
+  total = 0;
+  showProductDetail = false;
+  productChosen: Product | null = null;
+
+  constructor(
+    private productsService: ProductsService,
+    private storeService: StoreService
+  ) {
+    this.shoppingCart = this.storeService.getShoppingCart();
+  }
 
   ngOnInit() {
     this.productsService.getAllProducts().subscribe((data) => {
@@ -17,10 +29,20 @@ export class ProductsComponent {
     });
   }
 
-  products: Product[] = [];
+  addToShoppingCart(product: Product) {
+    this.storeService.addProductToCart(product);
+    this.total = this.storeService.getTotal();
+  }
 
-  clickOnProduct(id: string) {
-    console.log('product');
-    console.log(id);
+  toggleProductDetail() {
+    this.showProductDetail = !this.showProductDetail;
+  }
+
+  onShowProductDetail(id: string) {
+    this.productsService.getProduct(id).subscribe((data) => {
+      // console.log('product', data);
+      this.toggleProductDetail();
+      this.productChosen = data;
+    });
   }
 }

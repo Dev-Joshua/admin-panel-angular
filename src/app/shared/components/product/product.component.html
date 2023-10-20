@@ -13,7 +13,7 @@
     <p>{{ product.description | slice : 0 : 10 }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <a mat-raised-button [routerLink]="['/products', product.id]"
+    <a routerLink="." (click)="showProductDetail()" mat-raised-button
       >Ver detalle</a
     >
     <button (click)="addToCart()" mat-raised-button color="primary">

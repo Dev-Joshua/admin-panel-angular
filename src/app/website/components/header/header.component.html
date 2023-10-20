@@ -4,8 +4,10 @@
     <a>Products</a>
     <a>Contact</a>
   </nav>
-
-  <a class="button-raised" mat-raised-button
-    >Cart<mat-icon>shopping_cart</mat-icon></a
-  >
+  <div class="cart">
+    <button type="button" class="btn btn-light">
+      <a class="button-raised">Cart<mat-icon>shopping_cart</mat-icon></a>
+    </button>
+    <span class="counter-cart">{{ counter }}</span>
+  </div>
 </mat-toolbar>
