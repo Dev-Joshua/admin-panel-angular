@@ -5,32 +5,44 @@ import { RegisterComponent } from './website/pages/register/register.component';
 import { MyOderComponent } from './website/pages/my-oder/my-oder.component';
 import { LoginComponent } from './website/pages/login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductsComponent } from './shared/components/products/products.component';
+import { LayoutComponent } from './website/components/layout/layout.component';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full',
-  },
-  {
-    path: 'home',
-    component: HomeComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-  },
-  {
-    path: 'my-order',
-    component: MyOderComponent,
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: '**',
-    component: NotFoundComponent,
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'products',
+        component: ProductsComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+      },
+      {
+        path: 'my-order',
+        component: MyOderComponent,
+      },
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+      {
+        path: '**',
+        component: NotFoundComponent,
+      },
+    ],
   },
 ];
 
