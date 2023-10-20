@@ -18,6 +18,7 @@ import { BannerComponent } from './shared/components/banner/banner.component';
 import { ProductComponent } from './shared/components/product/product.component';
 import { ProductsComponent } from './shared/components/products/products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ImageComponent } from './shared/components/image/image.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     ProductComponent,
     ProductsComponent,
     NotFoundComponent,
+    ImageComponent,
   ],
   imports: [
     BrowserModule,
