@@ -6,10 +6,13 @@
 
   .nav {
     display: flex;
-    gap: 1.5em;
+    gap: 10px;
     a {
       font-size: 18px;
       cursor: pointer;
+    }
+    & a.active {
+      background-color: #0c1965;
     }
   }
   .cart {
