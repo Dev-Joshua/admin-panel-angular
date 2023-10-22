@@ -22,3 +22,12 @@
     }
   }
 }
+
+@media screen and (min-width: 20em) and (max-width: 40em) {
+  .products-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 2em;
+  }
+}
