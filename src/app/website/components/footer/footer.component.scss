@@ -3,9 +3,6 @@
 $primary: mat-palette($mat-indigo);
 
 footer {
-  display: grid;
-  position: absolute;
-  bottom: 0;
   width: 100%;
   margin-top: 20px;
   background-color: mat-color($primary);
