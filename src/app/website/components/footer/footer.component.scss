@@ -3,6 +3,7 @@
 $primary: mat-palette($mat-indigo);
 
 footer {
+  position: fixed;
   width: 100%;
   margin-top: 20px;
   background-color: mat-color($primary);

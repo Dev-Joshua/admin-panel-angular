@@ -1,7 +1,7 @@
 .products-grid {
   margin-top: 5em;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px;
   padding: 0 5em;
   .product-detail {
@@ -23,11 +23,20 @@
   }
 }
 
+//Mobile
 @media screen and (min-width: 20em) and (max-width: 40em) {
   .products-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 2em;
+  }
+}
+
+//Tablets
+@media screen and (min-width: 41em) and (max-width: 64em) {
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
   }
 }

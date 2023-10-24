@@ -1,10 +1,60 @@
-mat-card-title {
-  font-size: 18px;
-  font-weight: 700;
-  .crop-image {
-    height: 300px;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
+mat-card {
+  mat-card-title {
+    font-size: 18px;
+    font-weight: 700;
+    .crop-image {
+      height: 300px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+  }
+  mat-card-content {
+    margin-top: 10px;
+    gap: 10px;
+  }
+  mat-card-actions {
+    margin-top: 15px;
+    justify-content: space-between;
+    padding: 0 10px;
+    button {
+      font-size: 14px;
+      padding: 0 8px;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+//Tablets
+@media screen and (min-width: 41em) and (max-width: 64em) {
+  mat-card {
+    mat-card-header {
+      mat-card-title {
+        font-size: 15px;
+        font-weight: 700;
+        .crop-image {
+          height: 300px;
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+        }
+      }
+    }
+    mat-card-content {
+      mat-card-subtitle {
+        font-size: 14px;
+      }
+      p {
+        font-size: 15px;
+      }
+    }
+    mat-card-actions {
+      gap: 10px;
+      a,
+      button {
+        font-size: 14px;
+        padding: 6px;
+      }
+    }
   }
 }

@@ -11,6 +11,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [],
@@ -26,6 +29,9 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatRadioModule,
     MatCheckboxModule,
     MatStepperModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule,
   ],
   exports: [
     CommonModule,
@@ -39,6 +45,9 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatRadioModule,
     MatCheckboxModule,
     MatStepperModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule,
   ],
 })
 export class MaterialModule {}
