@@ -1,0 +1,28 @@
+<p>
+  Nombre: {{ nameField.value }}
+  <input type="text" [formControl]="nameField" />
+  <button (click)="getNameValue()">Get Value</button>
+  <!-- <code>
+    <pre>
+      {{ nameField | json }}
+    </pre>
+  </code> -->
+</p>
+
+<p>
+  Email: {{ emailField.value }}
+  <input type="email" [formControl]="emailField" />
+  <!-- <button (click)="getNameValue()">Get Value</button> -->
+</p>
+
+<p>
+  Celular: {{ phoneField.value }}
+  <input type="tel" [formControl]="phoneField" />
+  <!-- <button (click)="getNameValue()">Get Value</button> -->
+</p>
+
+<p>
+  Date: {{ dateField.value }}
+  <input type="tel" [formControl]="dateField" />
+  <!-- <button (click)="getNameValue()">Get Value</button> -->
+</p>
