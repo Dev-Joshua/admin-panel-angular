@@ -14,6 +14,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -32,6 +34,8 @@ import { MatTableModule } from '@angular/material/table';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatGridListModule,
+    MatMenuModule,
   ],
   exports: [
     CommonModule,
@@ -48,6 +52,8 @@ import { MatTableModule } from '@angular/material/table';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatGridListModule,
+    MatMenuModule,
   ],
 })
 export class MaterialModule {}
