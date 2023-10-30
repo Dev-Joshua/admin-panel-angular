@@ -8,10 +8,26 @@
 
 .sidenav .mat-toolbar {
   background: inherit;
+  font-weight: 700;
 }
 
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+mat-nav-list {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+.mat-sidenav-content .mat-toolbar span {
+  font-size: 23px;
 }
