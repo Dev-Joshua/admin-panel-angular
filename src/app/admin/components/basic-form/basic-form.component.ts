@@ -1,5 +1,10 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators, FormGroup } from '@angular/forms';
+import {
+  FormControl,
+  Validators,
+  FormGroup,
+  FormBuilder,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-basic-form',
@@ -7,32 +12,50 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
   styleUrls: ['./basic-form.component.scss'],
 })
 export class BasicFormComponent {
-  form = new FormGroup({
-    name: new FormControl('', [Validators.required, Validators.maxLength(10)]),
-    email: new FormControl(''),
-    phone: new FormControl(''),
-    date: new FormControl(''),
-    age: new FormControl(18),
-    color: new FormControl('#000'),
-    category: new FormControl(''),
-    tag: new FormControl(''),
-    agree: new FormControl(false),
-    gender: new FormControl(''),
-    zone: new FormControl(''),
-  });
+  form!: FormGroup;
 
-  // ngOnInit(): void {
-  //   this.nameField.valueChanges.subscribe((value) => {
-  //     console.log(value);
-  //   });
-  // }
+  constructor(private formBuilder: FormBuilder) {
+    this.buildForm();
+  }
+
+  ngOnInit(): void {
+    // this.nameField.valueChanges.subscribe((value) => {
+    //   console.log(value);
+    // });
+    this.form.valueChanges.subscribe((value) => {
+      console.log(value);
+    });
+  }
 
   submit(event: Event): void {
     if (this.form.invalid) {
-      this.form.controls.name.markAllAsTouched();
+      this.form.markAllAsTouched();
       return;
     }
     console.log(this.form.value);
+  }
+
+  private buildForm() {
+    this.form = this.formBuilder.group({
+      name: [
+        '',
+        [
+          Validators.required,
+          Validators.maxLength(20),
+          Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/),
+        ],
+      ],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
+      date: [''],
+      age: [18, [Validators.required, Validators.min(18), Validators.max(80)]],
+      color: ['#000'],
+      category: [''],
+      tag: [''],
+      agree: [false, [Validators.requiredTrue]],
+      gender: [''],
+      zone: [''],
+    });
   }
 
   //Obtener valores de manera reactiva de cualquier formulario en HTML
