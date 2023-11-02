@@ -18,14 +18,14 @@ export class BasicFormComponent {
     this.buildForm();
   }
 
-  ngOnInit(): void {
-    // this.nameField.valueChanges.subscribe((value) => {
-    //   console.log(value);
-    // });
-    this.form.valueChanges.subscribe((value) => {
-      console.log(value);
-    });
-  }
+  // ngOnInit(): void {
+  //   // this.nameField.valueChanges.subscribe((value) => {
+  //   //   console.log(value);
+  //   // });
+  //   this.form.valueChanges.subscribe((value) => {
+  //     console.log(value);
+  //   });
+  // }
 
   submit(event: Event): void {
     if (this.form.invalid) {
@@ -37,14 +37,24 @@ export class BasicFormComponent {
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      name: [
-        '',
-        [
-          Validators.required,
-          Validators.maxLength(20),
-          Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/),
+      fullName: this.formBuilder.group({
+        name: [
+          '',
+          [
+            Validators.required,
+            Validators.maxLength(20),
+            Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/),
+          ],
         ],
-      ],
+        lastName: [
+          '',
+          [
+            Validators.required,
+            Validators.maxLength(20),
+            Validators.pattern(/^([Aa-zA-ZáéíóúÁÉÍÓÚÑñ]{2,}\s?){2,4}$/),
+          ],
+        ],
+      }),
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required],
       date: [''],
@@ -72,7 +82,11 @@ export class BasicFormComponent {
   }
 
   get nameField() {
-    return this.form.get('name');
+    return this.form.get('fullName')?.get('name');
+  }
+
+  get lastField() {
+    return this.form.get('fullName')?.get('lastName');
   }
 
   get emailField() {
