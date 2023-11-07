@@ -89,6 +89,14 @@ export class BasicFormComponent {
     return this.form.get('fullName')?.get('lastName');
   }
 
+  get isEmailFieldValid() {
+    return this.emailField!.touched && this.emailField!.valid;
+  }
+
+  get isEmailFieldInvalid() {
+    return this.emailField!.touched && this.emailField!.invalid;
+  }
+
   get emailField() {
     return this.form.get('email');
   }

@@ -1,8 +1,26 @@
 <form [formGroup]="form" (ngSubmit)="submit($event)">
   <div class="grid-container">
     <div formGroupName="fullName">
-      <p>
-        Nombre: {{ nameField?.value }} {{ nameField?.valid }}
+      <mat-form-field appearance="fill">
+        <mat-label
+          >Nombre: {{ nameField?.value }} {{ nameField?.valid }}</mat-label
+        >
+        <input matInput type="text" formControlName="name" />
+        <mat-icon matSuffix *ngIf="isNameFieldValid">done</mat-icon>
+        <mat-icon matSuffix *ngIf="isNameFieldInvalid">close</mat-icon>
+        <mat-error *ngIf="nameField?.touched && nameField?.invalid">
+          <ng-container *ngIf="nameField?.hasError('required')"
+            >Este campo es requerido</ng-container
+          >
+          <ng-container *ngIf="nameField?.hasError('maxlength')"
+            >Maximo 20 caracteres</ng-container
+          >
+          <ng-container *ngIf="nameField?.hasError('pattern')"
+            >No debe tener caracteres especiales</ng-container
+          >
+        </mat-error>
+      </mat-form-field>
+      <!-- <p>
         <input
           [class.is-valid]="isNameFieldValid"
           [class.is-invalid]="isNameFieldInvalid"
@@ -12,11 +30,11 @@
         <button [disabled]="nameField?.invalid" (click)="getNameValue()">
           Get Value
         </button>
-        <!-- <code>
+        <code>
           <pre>
             {{ nameField | json }}
           </pre>
-        </code> -->
+        </code>
       </p>
       <div class="messages" [class.active]="isNameFieldInvalid">
         <p *ngIf="nameField?.hasError('required')">Este campo es requerido</p>
@@ -24,140 +42,181 @@
         <p *ngIf="nameField?.hasError('maxlength')">Maximo 10 caracteres</p>
 
         <p *ngIf="nameField?.hasError('pattern')">No debe tener caracteres</p>
-      </div>
-      <p>
-        Apellidos: {{ lastField?.value }} {{ lastField?.valid }}
-        <input type="text" formControlName="lastName" />
-      </p>
+      </div> -->
+      <mat-form-field appearance="fill">
+        <mat-label
+          >Apellidos: {{ lastField?.value }} {{ lastField?.valid }}</mat-label
+        >
+        <input matInput type="text" formControlName="lastName" />
+        <mat-icon matSuffix *ngIf="lastField?.touched && lastField?.valid"
+          >done</mat-icon
+        >
+        <mat-icon matSuffix *ngIf="lastField?.touched && lastField?.invalid"
+          >close</mat-icon
+        >
+      </mat-form-field>
     </div>
 
-    <p>
-      Email: {{ emailField?.value }}
-      <input type="email" formControlName="email" />
-    </p>
-    <div
+    <mat-form-field appearance="fill">
+      <mat-label> Email: {{ emailField?.value }} </mat-label>
+      <input matInput type="email" formControlName="email" />
+      <mat-icon matSuffix *ngIf="isEmailFieldValid">done</mat-icon>
+      <mat-icon matSuffix *ngIf="isEmailFieldInvalid">close</mat-icon>
+      <mat-error *ngIf="emailField?.touched && emailField?.invalid">
+        <ng-container *ngIf="emailField?.hasError('required')"
+          >Este campo es requerido</ng-container
+        >
+        <ng-container *ngIf="emailField?.hasError('email')"
+          >Este no es un correo valido</ng-container
+        >
+      </mat-error>
+    </mat-form-field>
+    <!-- <div
       class="messages"
       [class.active]="emailField?.touched && emailField?.invalid"
     >
       <p *ngIf="emailField?.hasError('required')">Este campo es requerido</p>
       <p *ngIf="emailField?.hasError('email')">Este no es un correo valido</p>
-    </div>
+    </div> -->
 
-    <p>
-      Celular: {{ phoneField?.value }}
+    <mat-form-field appearance="fill">
+      <mat-label>Celular: {{ phoneField?.value }}</mat-label>
       <input
+        matInput
         [class.is-invalid]="phoneField?.touched && phoneField?.invalid"
         type="tel"
         formControlName="phone"
       />
-    </p>
-    <div
+      <mat-icon matSuffix *ngIf="isEmailFieldValid">done</mat-icon>
+      <mat-icon matSuffix *ngIf="isEmailFieldInvalid">close</mat-icon>
+      <mat-error *ngIf="phoneField?.touched && phoneField?.invalid">
+        <ng-container *ngIf="emailField?.hasError('required')"
+          >Este campo es requerido</ng-container
+        >
+      </mat-error>
+    </mat-form-field>
+    <!-- <div
       class="messages"
       [class.active]="phoneField?.touched && phoneField?.invalid"
     >
       <p *ngIf="phoneField?.touched && phoneField?.hasError('required')">
         Este campo es requerido
       </p>
-    </div>
+    </div> -->
 
-    <p>
-      Date: {{ dateField?.value }}
-      <input type="date" formControlName="date" />
-    </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Date: {{ dateField?.value }}</mat-label>
+      <input matInput type="date" formControlName="date" />
+    </mat-form-field>
 
-    <p>
-      Age: {{ ageField?.value }}
-      <input type="number" formControlName="age" />
-    </p>
-    <div
+    <mat-form-field appearance="fill">
+      <mat-label> Age: {{ ageField?.value }} </mat-label>
+      <input matInput type="number" formControlName="age" />
+      <mat-icon matSuffix *ngIf="ageField?.touched && ageField?.valid"
+        >done</mat-icon
+      >
+      <mat-icon matSuffix *ngIf="ageField?.touched && ageField?.invalid"
+        >close</mat-icon
+      >
+      <mat-error *ngIf="ageField?.touched && ageField?.invalid">
+        <ng-container *ngIf="ageField?.hasError('required')"
+          >Este campo es requerido</ng-container
+        >
+        <ng-container *ngIf="ageField?.hasError('min')"
+          >Debes ser mayor de edad</ng-container
+        >
+        <ng-container *ngIf="ageField?.hasError('max')"
+          >Debes tener menos de 80 años</ng-container
+        >
+      </mat-error>
+    </mat-form-field>
+    <!-- <div
       class="messages"
       [class.active]="ageField?.touched && ageField?.invalid"
     >
       <p *ngIf="ageField?.hasError('required')">Este campo es requerido</p>
       <p *ngIf="ageField?.hasError('min')">Debes ser mayor de edad</p>
       <p *ngIf="ageField?.hasError('max')">Debes tener menos de 80 años</p>
-    </div>
+    </div> -->
 
-    <p>
-      Color: {{ colorField?.value }}
-      <input type="color" formControlName="color" />
-    </p>
+    <mat-form-field appearance="fill">
+      <mat-label> Color: {{ colorField?.value }} </mat-label>
+      <input matInput type="color" formControlName="color" />
+    </mat-form-field>
 
-    <p>
-      Category: {{ categoryField?.value }}
-      <select formControlName="category">
-        <option value="category-1">Category 1</option>
-        <option value="category-2">Category 2</option>
-        <option value="category-3">Category 3</option>
-        <option value="category-4">Category 4</option>
-        <option value="category-5">Category 5</option>
-      </select>
-    </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Category: {{ categoryField?.value }}</mat-label>
+      <mat-select formControlName="category">
+        <mat-option value="category-1">Category 1</mat-option>
+        <mat-option value="category-2">Category 2</mat-option>
+        <mat-option value="category-3">Category 3</mat-option>
+        <mat-option value="category-4">Category 4</mat-option>
+        <mat-option value="category-5">Category 5</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-    <p>
-      Tags: {{ tagField?.value }}
-      <select formControlName="tag" multiple>
-        <option value="tag-1">Tag 1</option>
-        <option value="tag-2">Tag 2</option>
-        <option value="tag-3">Tag 3</option>
-        <option value="tag-4">Tag 4</option>
-        <option value="tag-5">Tag 5</option>
-      </select>
-    </p>
+    <mat-form-field appearance="fill">
+      <mat-label> Tags: {{ tagField?.value }} </mat-label>
+      <mat-select formControlName="tag" multiple>
+        <mat-option value="tag-1">Tag 1</mat-option>
+        <mat-option value="tag-2">Tag 2</mat-option>
+        <mat-option value="tag-3">Tag 3</mat-option>
+        <mat-option value="tag-4">Tag 4</mat-option>
+        <mat-option value="tag-5">Tag 5</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-    <p>
+    <mat-checkbox formControlName="agree">
       Agree: {{ agreeField?.value }}
-      <input type="checkbox" formControlName="agree" />
-    </p>
-    <div
+      <mat-error>
+        <ng-container *ngIf="agreeField?.hasError('requiredTrue')">
+          Debes marcar este campo
+        </ng-container>
+      </mat-error>
+    </mat-checkbox>
+    <!-- <div
       class="messages"
       [class.active]="agreeField?.touched && agreeField?.invalid"
     >
       <p *ngIf="agreeField?.hasError('requiredTrue')">
         Debes marcar este campo
       </p>
-    </div>
+    </div> -->
 
-    <p>
+    <mat-radio-group>
       Gender: {{ genderField?.value }}
-      <label>
-        <input
-          name="gender"
-          type="radio"
-          value="male"
-          formControlName="gender"
-        />
-        Male
-      </label>
-      <label>
-        <input
-          name="gender"
-          type="radio"
-          value="female"
-          formControlName="gender"
-        />
-        Female
-      </label>
-    </p>
 
-    <p>
+      <mat-radio-button
+        name="gender"
+        type="radio"
+        value="male"
+        formControlName="gender"
+      >
+        Male</mat-radio-button
+      >
+
+      <mat-radio-button
+        name="gender"
+        type="radio"
+        value="female"
+        formControlName="gender"
+      >
+        Female</mat-radio-button
+      >
+    </mat-radio-group>
+
+    <mat-radio-group>
       Zone: {{ zoneField?.value }}
-      <label>
-        <input name="zone" type="radio" value="zona-1" formControlName="zone" />
-        Zona 1
-      </label>
-      <label>
-        <input name="zone" type="radio" value="zona-2" formControlName="zone" />
-        Zona 2
-      </label>
-      <label>
-        <input name="zone" type="radio" value="zona-3" formControlName="zone" />
-        Zona 3
-      </label>
-    </p>
 
-    <p>
-      <button type="submit">Enviar</button>
-    </p>
+      <mat-radio-button name="zone" type="radio" value="zona-1">
+        Zona 1</mat-radio-button
+      >
+
+      <mat-radio-button name="zone" type="radio" value="zona-2">
+        Zona 2</mat-radio-button
+      >
+    </mat-radio-group>
+
+    <button mat-button type="submit">Enviar</button>
   </div>
 </form>
