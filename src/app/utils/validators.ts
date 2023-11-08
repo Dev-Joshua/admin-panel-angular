@@ -3,7 +3,7 @@ import { AbstractControl } from '@angular/forms';
 export class MyValidators {
   static validPassword(control: AbstractControl) {
     const value = control.value;
-    console.log(value);
+    // console.log(value);
     if (!containsNumber(value)) {
       return { invalid_password: true };
     }

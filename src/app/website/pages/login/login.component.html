@@ -1,4 +1,4 @@
-<form>
+<form [formGroup]="form" (ngSubmit)="login($event)">
   <mat-card>
     <mat-card-header>
       <mat-card-title>Iniciar sesión</mat-card-title>
@@ -9,7 +9,12 @@
         <div class="col-xs">
           <mat-form-field>
             <mat-label>Email</mat-label>
-            <input placeholder="you@mail.com" matInput type="email" />
+            <input
+              placeholder="you@mail.com"
+              formControlName="email"
+              matInput
+              type="email"
+            />
           </mat-form-field>
         </div>
       </div>
@@ -18,7 +23,12 @@
         <div class="col-xs">
           <mat-form-field>
             <mat-label>Password</mat-label>
-            <input placeholder="******" matInput type="password" />
+            <input
+              placeholder="******"
+              formControlName="password"
+              matInput
+              type="password"
+            />
           </mat-form-field>
         </div>
       </div>
