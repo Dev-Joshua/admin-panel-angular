@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 import { Product } from 'src/app/models/product.model';
-import { ProductsService } from 'src/app/services/products.service';
-import { StoreService } from 'src/app/services/store.service';
+import { ProductsService } from 'src/app/services/products/products.service';
+import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
   selector: 'app-products',

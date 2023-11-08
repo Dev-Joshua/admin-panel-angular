@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
-import { StoreService } from 'src/app/services/store.service';
-import { CartService } from 'src/app/services/cart.service';
+import { StoreService } from 'src/app/services/store/store.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 
 import { Observable, map } from 'rxjs';
 

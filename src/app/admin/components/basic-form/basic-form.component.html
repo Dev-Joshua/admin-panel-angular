@@ -59,7 +59,13 @@
 
     <mat-form-field appearance="fill">
       <mat-label> Email: {{ emailField?.value }} </mat-label>
-      <input matInput type="email" formControlName="email" />
+      <input
+        matInput
+        placeholder="Ex. pat@example.com"
+        type="email"
+        formControlName="email"
+      />
+      <mat-icon matSuffix>mail_outline</mat-icon>
       <mat-icon matSuffix *ngIf="isEmailFieldValid">done</mat-icon>
       <mat-icon matSuffix *ngIf="isEmailFieldInvalid">close</mat-icon>
       <mat-error *ngIf="emailField?.touched && emailField?.invalid">
@@ -87,10 +93,9 @@
         type="tel"
         formControlName="phone"
       />
-      <mat-icon matSuffix *ngIf="isEmailFieldValid">done</mat-icon>
-      <mat-icon matSuffix *ngIf="isEmailFieldInvalid">close</mat-icon>
+      <mat-icon matSuffix>phone</mat-icon>
       <mat-error *ngIf="phoneField?.touched && phoneField?.invalid">
-        <ng-container *ngIf="emailField?.hasError('required')"
+        <ng-container *ngIf="phoneField?.hasError('required')"
           >Este campo es requerido</ng-container
         >
       </mat-error>
@@ -107,6 +112,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Date: {{ dateField?.value }}</mat-label>
       <input matInput type="date" formControlName="date" />
+      <mat-icon matSuffix>date_range</mat-icon>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -168,53 +174,29 @@
 
     <mat-checkbox formControlName="agree">
       Agree: {{ agreeField?.value }}
-      <mat-error>
-        <ng-container *ngIf="agreeField?.hasError('requiredTrue')">
-          Debes marcar este campo
-        </ng-container>
-      </mat-error>
     </mat-checkbox>
-    <!-- <div
+    <div
       class="messages"
       [class.active]="agreeField?.touched && agreeField?.invalid"
     >
       <p *ngIf="agreeField?.hasError('requiredTrue')">
         Debes marcar este campo
       </p>
-    </div> -->
+    </div>
 
-    <mat-radio-group>
+    <mat-radio-group aria-label="Select an option" formControlName="gender">
       Gender: {{ genderField?.value }}
 
-      <mat-radio-button
-        name="gender"
-        type="radio"
-        value="male"
-        formControlName="gender"
-      >
-        Male</mat-radio-button
-      >
-
-      <mat-radio-button
-        name="gender"
-        type="radio"
-        value="female"
-        formControlName="gender"
-      >
-        Female</mat-radio-button
-      >
+      <mat-radio-button value="male"> Male</mat-radio-button>
+      <mat-radio-button value="female"> Female</mat-radio-button>
     </mat-radio-group>
 
-    <mat-radio-group>
+    <mat-radio-group aria-label="Select an option" formControlName="zone">
       Zone: {{ zoneField?.value }}
 
-      <mat-radio-button name="zone" type="radio" value="zona-1">
-        Zona 1</mat-radio-button
-      >
+      <mat-radio-button value="zona-1"> Zona 1</mat-radio-button>
 
-      <mat-radio-button name="zone" type="radio" value="zona-2">
-        Zona 2</mat-radio-button
-      >
+      <mat-radio-button value="zona-2"> Zona 2</mat-radio-button>
     </mat-radio-group>
 
     <button mat-button type="submit">Enviar</button>

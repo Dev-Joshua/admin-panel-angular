@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Product } from 'src/app/models/product.model';
 
-import { CartService } from 'src/app/services/cart.service';
+import { CartService } from 'src/app/services/cart/cart.service';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
