@@ -74,7 +74,7 @@
             <mat-label>Confirme contraseña</mat-label>
             <input formControlName="confirmPassword" matInput type="password" />
             <mat-error *ngIf="confirmPasswordField?.touched && form?.errors">
-              <ng-container *ngIf="form?.hasError('match_password')"
+              <ng-container *ngIf="form.hasError('match_password')"
                 >Las contraseñas no coinciden</ng-container
               >
             </mat-error>

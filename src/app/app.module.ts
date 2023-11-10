@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SwiperModule } from 'swiper/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 
@@ -22,6 +22,9 @@ import { ProductComponent } from './shared/components/product/product.component'
 import { ProductsComponent } from './shared/components/products/products.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ImageComponent } from './shared/components/image/image.component';
+import { ProfileComponent } from './website/pages/profile/profile.component';
+
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { ImageComponent } from './shared/components/image/image.component';
     ProductsComponent,
     NotFoundComponent,
     ImageComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,9 @@ import { ImageComponent } from './shared/components/image/image.component';
     CommonModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

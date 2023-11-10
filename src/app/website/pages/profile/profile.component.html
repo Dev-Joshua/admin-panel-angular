@@ -1,0 +1,50 @@
+<form *ngIf="user">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Perfil</mat-card-title>
+      <hr />
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col-xs">
+          <mat-label>{{ user.name }}</mat-label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-label>{{ user.email }}</mat-label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-label>{{ user.password }}</mat-label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-label>{{ user.role }}</mat-label>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-label>{{ user.avatar }}</mat-label>
+        </div>
+      </div>
+
+      <!-- <mat-checkbox>Hide required marker</mat-checkbox> -->
+      <!-- <div>
+        <mat-radio-group>
+          <mat-radio-button value="auto">User</mat-radio-button>
+          <mat-radio-button value="always">Company</mat-radio-button>
+        </mat-radio-group>
+      </div> -->
+    </mat-card-content>
+    <mat-card-actions>
+      <button disabled mat-raised-button>Actualizar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>
