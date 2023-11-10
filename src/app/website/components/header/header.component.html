@@ -4,6 +4,34 @@
     <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
     <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
   </nav>
+
+  <div class="acount">
+    <button
+      type="button"
+      class="btn btn-light"
+      *ngIf="!profile; else elseBlock"
+    >
+      <a routerLinkActive="active" routerLink="login" class="button-raised"
+        >Sign in</a
+      >
+    </button>
+    <hr />
+    <div *ngIf="!profile">
+      <button type="button" class="btn btn-light">
+        <a routerLinkActive="active" routerLink="register" class="button-raised"
+          >Sign up</a
+        >
+      </button>
+    </div>
+    <ng-template #elseBlock>
+      <a class="user_profile" routerLink="profile">{{ profile?.email }}</a>
+    </ng-template>
+    <div *ngIf="profile">
+      <button type="button" class="btn btn-light" (click)="logout()">
+        <a class="button-raised">Cerrar sesión</a>
+      </button>
+    </div>
+  </div>
   <div class="cart">
     <button type="button" class="btn btn-light">
       <a routerLink="/my-order" class="button-raised"
