@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
   RouterStateSnapshot,
   UrlTree,
+  Router,
 } from '@angular/router';
 import { Observable, map } from 'rxjs';
 
@@ -40,7 +40,7 @@ export class AuthGuard implements CanActivate {
     return this.authService.user$.pipe(
       map((user) => {
         if (!user) {
-          this.router.navigate(['/home']);
+          // this.router.navigate(['/home']);
           return false;
         }
         return true;

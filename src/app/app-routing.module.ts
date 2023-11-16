@@ -10,7 +10,7 @@ import { ProductsComponent } from './shared/components/products/products.compone
 import { LayoutComponent } from './website/components/layout/layout.component';
 import { ProfileComponent } from './website/pages/profile/profile.component';
 
-import { adminGuard } from './guards/admin.guard';
+import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -52,7 +52,7 @@ const routes: Routes = [
   },
   {
     path: 'admin',
-    canActivate: [adminGuard],
+    canActivate: [AdminGuard],
     loadChildren: () =>
       import('./admin/admin.module').then((m) => m.AdminModule),
   },

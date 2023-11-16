@@ -1,36 +1,42 @@
+import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
-  CanActivateFn,
+  CanActivate,
   Router,
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { inject } from '@angular/core';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, map } from 'rxjs';
 
 import { AuthService } from '../services/auth/auth.service';
+import { User } from '../models/user.model';
 
-export const adminGuard: CanActivateFn = (
-  route: ActivatedRouteSnapshot,
-  state: RouterStateSnapshot
-):
-  | Observable<boolean | UrlTree>
-  | Promise<boolean | UrlTree>
-  | boolean
-  | UrlTree => {
-  const authService = inject(AuthService);
-  const router = inject(Router);
+@Injectable({
+  providedIn: 'root',
+})
+export class AdminGuard implements CanActivate {
+  private user: User | null = null;
 
-  return authService.user$.pipe(
-    map((user) => {
-      if (user?.role === 'admin') {
-        router.navigate(['/admin']);
-        return true;
-      } else {
-        router.navigate(['/home']);
-        return false;
-      }
-    })
-  );
-};
+  constructor(private authService: AuthService, private router: Router) {}
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
+    return this.authService.user$.pipe(
+      map((user) => {
+        if (user?.role === 'admin') {
+          console.log('exitoso');
+          return true;
+        } else {
+          console.log('error');
+          return false;
+        }
+      })
+    );
+  }
+}

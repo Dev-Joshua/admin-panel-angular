@@ -40,4 +40,9 @@ export class AuthService {
   logout() {
     this.tokenService.removeToken();
   }
+
+  // getAdminRole() {
+  //   const token = localStorage.getItem('role');
+  //   return token;
+  // }
 }
