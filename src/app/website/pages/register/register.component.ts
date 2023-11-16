@@ -70,6 +70,10 @@ export class RegisterComponent {
         validators: MyValidators.matchPasswords,
       }
     );
+
+    this.roleField?.valueChanges.subscribe((value) => {
+      console.log(value);
+    });
   }
 
   get nameField() {
