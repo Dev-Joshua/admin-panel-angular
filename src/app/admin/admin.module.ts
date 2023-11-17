@@ -10,10 +10,15 @@ import { MaterialModule } from '../material/material.module';
 import { BasicFormComponent } from './components/basic-form/basic-form.component';
 import { CategoriesComponent } from './pages/categories/components/categories/categories.component';
 import { CategoryFormComponent } from './pages/categories/components/category-form/category-form.component';
-import { ProductsComponent } from './pages/products/components/products/products.component';
 
 @NgModule({
-  declarations: [LayoutComponent, DashboardComponent, BasicFormComponent, CategoriesComponent, CategoryFormComponent, ProductsComponent],
+  declarations: [
+    LayoutComponent,
+    DashboardComponent,
+    BasicFormComponent,
+    CategoriesComponent,
+    CategoryFormComponent,
+  ],
   imports: [
     CommonModule,
     AdminRoutingModule,

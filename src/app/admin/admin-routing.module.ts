@@ -22,6 +22,13 @@ const routes: Routes = [
         path: 'basic',
         component: BasicFormComponent,
       },
+      {
+        path: 'products',
+        loadChildren: () =>
+          import('./pages/products/products.module').then(
+            (m) => m.ProductsModule
+          ),
+      },
     ],
   },
 ];
