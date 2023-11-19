@@ -8,17 +8,9 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { MaterialModule } from '../material/material.module';
 import { BasicFormComponent } from './components/basic-form/basic-form.component';
-import { CategoriesComponent } from './pages/categories/components/categories/categories.component';
-import { CategoryFormComponent } from './pages/categories/components/category-form/category-form.component';
 
 @NgModule({
-  declarations: [
-    LayoutComponent,
-    DashboardComponent,
-    BasicFormComponent,
-    CategoriesComponent,
-    CategoryFormComponent,
-  ],
+  declarations: [LayoutComponent, DashboardComponent, BasicFormComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
