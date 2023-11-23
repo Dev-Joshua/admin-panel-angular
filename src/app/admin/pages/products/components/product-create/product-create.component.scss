@@ -1,0 +1,23 @@
+:host {
+  width: 96%;
+  margin: 2%;
+  display: block;
+}
+
+form {
+  mat-card-header {
+    margin-bottom: 35px;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  mat-card-actions {
+    justify-content: center;
+    button {
+      width: 60%;
+      padding: 25px;
+      font-size: 16px;
+      margin: 15px;
+    }
+  }
+}
