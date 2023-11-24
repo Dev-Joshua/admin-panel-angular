@@ -87,6 +87,6 @@ export class ProductCreateComponent {
   }
 
   get imageField() {
-    return this.form.get('image');
+    return this.form.get('images');
   }
 }
