@@ -15,9 +15,9 @@ export class CategoriesComponent {
   constructor(private categoriesService: CategoriesService) {}
 
   ngOnInit(): void {
-    this.categoriesService.getAllCategories().subscribe((data) => {
-      this.categories = data;
-      console.log(data);
+    this.categoriesService.getAllCategories().subscribe((categories) => {
+      this.categories = categories;
+      console.log(categories);
     });
   }
 }
