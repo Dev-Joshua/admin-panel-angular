@@ -39,7 +39,7 @@ export class LoginComponent {
         .subscribe(() => {
           // this.profile = user;
           // this.token = rta.access_token;
-          this.router.navigate(['/products']);
+          this.router.navigate(['/profile']);
         });
     }
   }

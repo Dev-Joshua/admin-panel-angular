@@ -1,62 +1,12 @@
-<!-- <form *ngIf="user">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Perfil</mat-card-title>
-      <hr />
-    </mat-card-header>
-    <mat-card-content>
-      <div class="row">
-        <div class="col-xs">
-          <mat-label>Nombre:</mat-label>
-          {{ user.name }}
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs">
-          <mat-label>{{ user.email }}</mat-label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs">
-          <mat-label>{{ user.password }}</mat-label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs">
-          <mat-label>{{ user.role }}</mat-label>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs">
-          <mat-label>{{ user.avatar }}</mat-label>
-        </div>
-      </div>
-
-      <mat-checkbox>Hide required marker</mat-checkbox>
-      <div>
-        <mat-radio-group>
-          <mat-radio-button value="auto">User</mat-radio-button>
-          <mat-radio-button value="always">Company</mat-radio-button>
-        </mat-radio-group>
-      </div>
-    </mat-card-content>
-    <a *ngIf="user.role === 'admin'" routerLink="/admin">Ir al CMS Admin</a>
-    <mat-card-actions>
-      <button disabled mat-raised-button>Editar</button>
-    </mat-card-actions>
-  </mat-card>
-</form> -->
-
 <section class="vh-100" style="background-color: #f4f5f7">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-12 col-xl-5">
         <div class="card" style="border-radius: 15px">
           <div class="card-body text-center">
+            <a style="position: relative; left: 12em" routerLink="/home"
+              ><mat-icon style="color: #000">clear</mat-icon></a
+            >
             <div class="mt-3 mb-4">
               <img
                 [src]="user?.avatar"
@@ -64,9 +14,6 @@
                 class="rounded-circle img-fluid"
                 style="width: 100px"
               />
-
-              <!-- <p>Web Designer</p>
-                <i class="far fa-edit mb-5"></i> -->
             </div>
             <h4>Perfil</h4>
             <hr class="mt-0 mb-2" />

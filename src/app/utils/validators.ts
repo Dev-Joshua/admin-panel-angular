@@ -29,21 +29,6 @@ export class MyValidators {
     }
     return null;
   }
-
-  // static validateCategory(service: CategoriesService) {
-  //   return (control: AbstractControl) => {
-  //     const value = control.value;
-  //     return service.checkCategory(value).pipe(
-  //       map((response: any) => {
-  //         const isAvailable = response.isAvailable;
-  //         if (!isAvailable) {
-  //           return { not_available: true };
-  //         }
-  //         return null;
-  //       })
-  //     );
-  //   };
-  // }
 }
 
 function containsNumber(value: string) {

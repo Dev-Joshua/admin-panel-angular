@@ -10,7 +10,11 @@
   background: inherit;
   font-weight: 700;
 }
-
+.mat-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .mat-toolbar.mat-primary {
   position: sticky;
   top: 0;
