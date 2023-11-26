@@ -13,6 +13,9 @@ table {
 a {
   margin: 1em;
   z-index: 0;
+  &:hover {
+    font-weight: 700;
+  }
 }
 section {
   padding: 1em;

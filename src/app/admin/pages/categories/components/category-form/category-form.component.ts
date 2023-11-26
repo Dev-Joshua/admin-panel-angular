@@ -1,10 +1,10 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { Observable, finalize } from 'rxjs';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { Category } from 'src/app/models/category.model';
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 
 @Component({
@@ -22,7 +22,8 @@ export class CategoryFormComponent {
     private storage: AngularFireStorage,
     private categoriesService: CategoriesService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private location: Location
   ) {
     this.buildForm();
   }
@@ -112,5 +113,9 @@ export class CategoryFormComponent {
         })
       )
       .subscribe();
+  }
+
+  goToBack() {
+    this.location.back();
   }
 }

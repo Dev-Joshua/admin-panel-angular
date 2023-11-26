@@ -1,0 +1,30 @@
+form {
+  width: 100%;
+  margin: 2%;
+  mat-card {
+    display: grid;
+    width: 45%;
+    .mat-header {
+      margin-bottom: 35px;
+      display: flex;
+      align-items: center;
+    }
+    mat-card-content {
+      mat-form-field {
+        width: 100%;
+      }
+      img {
+        width: 200px;
+      }
+    }
+    mat-card-actions {
+      justify-content: center;
+      button {
+        width: 60%;
+        padding: 25px;
+        font-size: 16px;
+        margin: 15px;
+      }
+    }
+  }
+}

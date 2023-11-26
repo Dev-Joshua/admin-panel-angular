@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
@@ -22,7 +23,8 @@ export class ProductCreateComponent {
     private formBuilder: FormBuilder,
     private productsService: ProductsService,
     private router: Router,
-    private storage: AngularFireStorage
+    private storage: AngularFireStorage,
+    private location: Location
   ) {
     this.buildForm();
   }
@@ -88,5 +90,9 @@ export class ProductCreateComponent {
 
   get imageField() {
     return this.form.get('images');
+  }
+
+  goToBack() {
+    this.location.back();
   }
 }

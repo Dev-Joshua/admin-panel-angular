@@ -1,8 +1,19 @@
 <form [formGroup]="form" (ngSubmit)="saveProduct($event)">
-  <mat-card>
-    <mat-card-header>
-      <mat-card-title>Producto</mat-card-title>
-    </mat-card-header>
+  <mat-card style="width: 45%">
+    <div class="mat-header">
+      <mat-icon style="cursor: pointer; margin: 15px" (click)="goToBack()"
+        >arrow_back</mat-icon
+      >
+      <mat-card-title
+        style="
+          text-align: center;
+          margin: 15px;
+          font-size: 22px;
+          font-weight: bold;
+        "
+        >Producto</mat-card-title
+      >
+    </div>
     <mat-card-content>
       <div class="row">
         <div class="col-xs">
@@ -60,7 +71,7 @@
       </div>
       <div class="row">
         <div class="col-xs">
-          <img *ngIf="image$ | async as images" [src]="images" />
+          <img *ngIf="image$ | async as images" [src]="images" width="200px" />
           <input
             formControlName="images"
             type="file"

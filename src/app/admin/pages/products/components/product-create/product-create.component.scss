@@ -5,8 +5,10 @@
 }
 
 form {
-  mat-card-header {
+  .mat-header {
     margin-bottom: 35px;
+    display: flex;
+    align-items: center;
   }
   mat-form-field {
     width: 100%;

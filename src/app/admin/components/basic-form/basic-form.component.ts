@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -9,18 +10,9 @@ import { Validators, FormGroup, FormBuilder } from '@angular/forms';
 export class BasicFormComponent {
   form!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private location: Location) {
     this.buildForm();
   }
-
-  // ngOnInit(): void {
-  //   // this.nameField.valueChanges.subscribe((value) => {
-  //   //   console.log(value);
-  //   // });
-  //   this.form.valueChanges.subscribe((value) => {
-  //     console.log(value);
-  //   });
-  // }
 
   submit(event: Event): void {
     if (this.form.invalid) {
@@ -130,5 +122,9 @@ export class BasicFormComponent {
 
   get zoneField() {
     return this.form.get('zone');
+  }
+
+  goToBack() {
+    this.location.back();
   }
 }
