@@ -4,6 +4,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map, shareReplay } from 'rxjs/operators';
 
 import { Observable } from 'rxjs';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-layout',
@@ -20,6 +21,12 @@ export class LayoutComponent {
 
   constructor(
     private brakpointObserver: BreakpointObserver,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
   ) {}
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['./home']);
+  }
 }

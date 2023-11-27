@@ -37,10 +37,6 @@ export class HeaderComponent {
     });
   }
 
-  // login() {
-  //   this.router.navigate(['/login']);
-  // }
-
   logout() {
     this.authService.logout();
     this.profile = null;

@@ -29,7 +29,7 @@ export class CategoriesService {
     return this.http.put<Category>(`${this.apiUrl}/${id}`, data);
   }
 
-  // checkCategory(name: string) {
-  //   return this.http.post(`${this.apiUrl}/availability`, { name });
-  // }
+  deleteCategory(id: string) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 }

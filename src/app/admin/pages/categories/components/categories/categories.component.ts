@@ -20,4 +20,13 @@ export class CategoriesComponent {
       console.log(categories);
     });
   }
+
+  deleteProduct(id: string) {
+    this.categoriesService.deleteCategory(id).subscribe((rta) => {
+      this.categoriesService.getAllCategories().subscribe((data) => {
+        this.categories = data;
+        console.log(data);
+      });
+    });
+  }
 }

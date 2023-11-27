@@ -19,4 +19,13 @@ export class ProductsComponent {
       console.log(data);
     });
   }
+
+  deleteProduct(id: string) {
+    this.productService.deleteProduct(id).subscribe((rta) => {
+      this.productService.getAllProducts().subscribe((data) => {
+        this.products = data;
+        console.log(data);
+      });
+    });
+  }
 }

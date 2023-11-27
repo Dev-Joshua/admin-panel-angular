@@ -1,6 +1,7 @@
 @import "swiper/scss";
 @import "swiper/scss/navigation";
 @import "swiper/scss/pagination";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
 
 html,
 body {
@@ -9,9 +10,20 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Inter", sans-serif;
 }
 footer {
   display: grid;
   bottom: 0;
+}
+
+.product-detail {
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+    img {
+      width: 100%;
+      aspect-ratio: 1/1;
+    }
+  }
 }
