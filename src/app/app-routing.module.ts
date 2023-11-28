@@ -12,6 +12,7 @@ import { ProfileComponent } from './website/pages/profile/profile.component';
 
 import { AdminGuard } from './guards/admin.guard';
 import { AuthGuard } from './guards/auth.guard';
+import { ContactComponent } from './website/pages/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -47,6 +48,10 @@ const routes: Routes = [
         path: 'profile',
         canActivate: [AuthGuard],
         component: ProfileComponent,
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
       },
     ],
   },

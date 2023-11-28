@@ -26,6 +26,7 @@ import { ProductsComponent } from './shared/components/products/products.compone
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ImageComponent } from './shared/components/image/image.component';
 import { ProfileComponent } from './website/pages/profile/profile.component';
+import { ContactComponent } from './website/pages/contact/contact.component';
 
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { environment } from 'src/environments/environment';
@@ -46,6 +47,7 @@ import { environment } from 'src/environments/environment';
     NotFoundComponent,
     ImageComponent,
     ProfileComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
