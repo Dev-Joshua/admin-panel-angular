@@ -13,6 +13,7 @@ import { User } from 'src/app/models/user.model';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
+  activeMenu = false;
   profile: User | null = null;
   total$: Observable<number>;
   counter = 0;
@@ -41,5 +42,9 @@ export class HeaderComponent {
     this.authService.logout();
     this.profile = null;
     this.router.navigate(['/home']);
+  }
+
+  toggleMenu() {
+    this.activeMenu = !this.activeMenu;
   }
 }

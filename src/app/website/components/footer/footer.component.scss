@@ -29,6 +29,7 @@ footer {
         }
       }
       button {
+        color: #fff;
         height: 55px;
         width: 100px;
       }
@@ -66,13 +67,20 @@ footer {
         }
       }
       .box {
+        mat-form-field {
+          height: 58px;
+        }
+        button {
+          height: 36px;
+        }
         h3 {
           font-size: 16px;
         }
         ul {
           li {
+            margin: 0;
             a {
-              font-size: 14px;
+              font-size: 12px;
             }
           }
         }

@@ -3,10 +3,12 @@
     <mat-card-title>{{ product.title }}</mat-card-title>
   </mat-card-header>
   <div class="crop-image">
-    <app-image
-      *ngIf="product.images.length > 0"
-      [img]="product.images[0]"
-    ></app-image>
+    <figure>
+      <app-image
+        *ngIf="product.images.length > 0"
+        [img]="product.images[0]"
+      ></app-image>
+    </figure>
   </div>
   <mat-card-content>
     <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
@@ -17,7 +19,7 @@
       >Ver detalle</a
     >
     <button (click)="addToCart()" mat-raised-button color="primary">
-      Agregar al carrito
+      <mat-icon>add_shopping_cart</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>

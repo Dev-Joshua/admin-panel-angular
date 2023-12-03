@@ -51,6 +51,13 @@ form {
     }
   }
 }
+
+@media screen and (min-width: 20em) and (max-width: 40em) {
+  form {
+    top: 40vw;
+  }
+}
+
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   form {

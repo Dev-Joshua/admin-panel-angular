@@ -1,6 +1,8 @@
 <!-- <app-header></app-header> -->
-<div class="container">
+<div *ngIf="sizeDisplay == 'web'" class="container">
   <app-banner></app-banner>
 </div>
-
+<div style="padding: 0" *ngIf="sizeDisplay == 'phone'" class="container">
+  <app-login> </app-login>
+</div>
 <app-footer></app-footer>

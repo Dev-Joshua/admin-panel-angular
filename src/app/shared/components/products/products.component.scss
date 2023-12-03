@@ -84,3 +84,13 @@
     }
   }
 }
+
+@media screen and (min-width: 20em) and (max-width: 40em) {
+  .products-grid {
+    margin-top: 5em;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 15px;
+    padding: 15px;
+  }
+}

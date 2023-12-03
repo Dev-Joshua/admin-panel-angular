@@ -17,6 +17,11 @@ footer {
   bottom: 0;
 }
 
+app-header {
+  position: fixed;
+  z-index: 9999;
+}
+
 .product-detail {
   .swiper-slide {
     display: flex;
