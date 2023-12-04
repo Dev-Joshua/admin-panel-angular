@@ -12,6 +12,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent {
+  activeMenu = false;
+
   isHandset$: Observable<boolean> = this.brakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(

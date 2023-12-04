@@ -127,22 +127,24 @@
     transition: all ease-out 0.5s;
     z-index: 9999;
     ul {
-      margin-left: 20px;
       width: 80%;
-      margin-top: 5em;
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 35px;
+      align-items: flex-start;
       li,
       a {
         text-decoration: none;
         font-weight: bold;
         color: #000;
         list-style: none;
+        font-size: 20px;
       }
     }
     &.active {
       transform: translateX(0);
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 }
@@ -169,11 +171,20 @@
       }
     }
   }
+  .show-mobile {
+    .slide-menu {
+      ul {
+      }
+    }
+  }
 }
 
 @media screen and (min-width: 40em) and (max-width: 63.9em) {
   .show-mobile {
     display: none;
+  }
+  .toolbar-container {
+    padding: 0 1em;
   }
 }
 

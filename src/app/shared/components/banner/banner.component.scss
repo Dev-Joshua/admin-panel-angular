@@ -1,29 +1,33 @@
 .banner {
-  display: none;
+  display: flex;
+  .swiper-container {
+    top: 120px;
+    width: 95vw;
+  }
   .banner--slider {
     display: flex;
     justify-content: center;
     align-items: center;
     img {
       padding: 2em;
+      object-fit: contain;
+      overflow: hidden;
     }
   }
 }
 
-@media screen and (min-width: 41em) {
-  .banner {
-    display: flex;
-    justify-content: center;
-    .banner--slider {
-    }
-  }
-}
+// @media screen and (min-width: 41em) {
+//   .banner {
+//     display: flex;
+//     justify-content: center;
+//   }
+// }
 
-@media screen and (min-width: 70em) {
+@media screen and (min-width: 20em) and (max-width: 40em) {
   .banner {
     .banner--slider {
       img {
-        padding: 5em;
+        padding: 0;
         width: 100%;
       }
     }

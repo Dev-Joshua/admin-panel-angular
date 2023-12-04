@@ -1,19 +1,11 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-home',
-//   templateUrl: './home.component.html',
-//   styleUrls: ['./home.component.scss']
-// })
-// export class HomeComponent {
-
-// }
 import {
   BreakpointObserver,
   Breakpoints,
   BreakpointState,
 } from '@angular/cdk/layout';
 import { Component } from '@angular/core';
+import { User } from 'src/app/models/user.model';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -22,28 +14,36 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   public sizeDisplay: string = 'phone' || 'web';
+  profile: User | null = null;
 
-  constructor(public breakpointObserver: BreakpointObserver) {
-    this.mediaQuery();
+  constructor(
+    public breakpointObserver: BreakpointObserver,
+    private authService: AuthService
+  ) {
+    // this.mediaQuery();
   }
 
-  public mediaQuery() {
-    this.breakpointObserver
-      .observe(Breakpoints.Small)
-      .subscribe((state: BreakpointState) => {
-        if (state.matches) {
-          //AQUI SERA TRUE SOLO SI ESTA EN RESOLUCION DE CELULAR
-          this.sizeDisplay = 'phone';
-        }
-      });
-
-    this.breakpointObserver
-      .observe(Breakpoints.Web)
-      .subscribe((state: BreakpointState) => {
-        if (state.matches) {
-          //AQUI SERA TRUE SOLO SI ES RESOLUCION PARA WEB
-          this.sizeDisplay = 'web';
-        }
-      });
+  ngOnInit(): void {
+    this.authService.user$.subscribe((data) => {
+      this.profile = data;
+    });
   }
+
+  // public mediaQuery() {
+  //   this.breakpointObserver
+  //     .observe(Breakpoints.Small)
+  //     .subscribe((state: BreakpointState) => {
+  //       if (state.matches) {
+  //         this.sizeDisplay = 'phone';
+  //       }
+  //     });
+
+  //   this.breakpointObserver
+  //     .observe(Breakpoints.Web)
+  //     .subscribe((state: BreakpointState) => {
+  //       if (state.matches) {
+  //         this.sizeDisplay = 'web';
+  //       }
+  //     });
+  // }
 }

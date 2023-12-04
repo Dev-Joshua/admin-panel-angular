@@ -6,8 +6,9 @@ $primary: mat-palette($mat-indigo);
   height: 100vh;
   background-color: #3f51b5;
   display: block;
+  width: 100vw;
 }
-// --background: linear-gradient(90deg, #1c3643, #273b47 25%, #1e5372);
+
 form {
   width: 90%;
   margin: 0px auto;
@@ -54,7 +55,13 @@ form {
 
 @media screen and (min-width: 20em) and (max-width: 40em) {
   form {
-    top: 40vw;
+    top: 35vw;
+    mat-card-actions {
+      margin: 10px 0;
+      button {
+        width: 100%;
+      }
+    }
   }
 }
 
