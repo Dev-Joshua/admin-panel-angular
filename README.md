@@ -88,11 +88,13 @@ Para comenzar a usar admin-panel, siga estos pasos:
 
 ## Tecnologías Utilizadas
 
-Las principales tecnologías y herramientas utilizadas en este proyecto son:
+Tecnologías y herramientas que se implementaron:
 
 - HTML
 - SCSS
-- Angular 16
+- Angular
 - Angular Material
 - TypeScript
 - Consumo API REST
+
+Link de la API: https://fakeapi.platzi.com/

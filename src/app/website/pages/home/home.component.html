@@ -1,11 +1,13 @@
-<!-- <app-header></app-header> -->
-<!-- <div *ngIf="sizeDisplay == 'web'" class="container">
-  <app-banner></app-banner>
-</div> -->
-<div style="padding: 0" *ngIf="profile; else elseBlock" class="container-login">
-  <app-banner></app-banner>
-  <app-footer class="container-footer"></app-footer>
-</div>
-<ng-template #elseBlock>
-  <app-login></app-login>
-</ng-template>
+<section>
+  <div
+    style="padding: 0"
+    *ngIf="profile; else elseBlock"
+    class="container-login"
+  >
+    <app-banner></app-banner>
+    <app-footer class="container-footer"></app-footer>
+  </div>
+  <ng-template #elseBlock>
+    <app-login></app-login>
+  </ng-template>
+</section>

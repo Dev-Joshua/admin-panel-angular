@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { AuthService } from 'src/app/services/auth/auth.service';
 import { UsersService } from 'src/app/services/users/users.service';
 import { MyValidators } from 'src/app/utils/validators';
-import { TokenService } from 'src/app/services/token/token.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
