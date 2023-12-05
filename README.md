@@ -1,6 +1,6 @@
 # Admin-panel
 
-<!-- - La aplicación esta desplegada en Netlify: [Link](URL) -->
+- La aplicación esta desplegada en Netlify: [Link](https://cms-ec-admin.netlify.app/)
 
 Esta aplicacion web esta desarrollada en Angular, permite a los usuarios explorar e interactuar con una amplia gama de productos en línea, se mejoro el carrito de compras para que el usuario customer pueda ver sus productos agregados, aparte esta version cuenta con un panel o CMS que permite al usuario autenticado como administrador ingresar a esta interfaz donde podra mofidicar la lista de productos y categorias.
 
